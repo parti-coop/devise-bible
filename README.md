@@ -92,3 +92,25 @@ $ bin/rails g devise:views:bootstrap_haml_templates
 
 ## 로그인, 로그아웃을 만듭니다.
 
+홈 화면에 로그인, 로그아웃 링크를 만듭니다.
+```
+%section
+  %nav.navbar.navbar-default.navbar-fixed-top
+    .container
+      .navbar-header
+        %ul.nav.navbar-nav
+          - if user_signed_in?
+            %li
+              = link_to '#' do
+                #{current_user.nickname}님
+            %li
+              = link_to destroy_user_session_path, method: :delete do
+                로그아웃
+          - else
+            %li
+              = link_to new_user_session_path do
+                로그인
+            %li
+              = link_to new_user_registration_path do
+                회원가입
+```
