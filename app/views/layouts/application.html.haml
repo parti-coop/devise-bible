@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title Devise Bible
+
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all'
+    %link{href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel: "stylesheet"}
+
+    - if content_for?(:stylesheet)
+      = yield(:stylesheet)
+  %body
+    %section
+      .container
+        = yield
+
+    = javascript_include_tag 'application'
+    - if content_for?(:script)
+      = yield(:script)
