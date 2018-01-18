@@ -22,7 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'auto_strip_attributes'
 gem 'devise', '~> 4.4'
 gem 'devise-bootstrap-views'
-
+gem 'ruby_dig'
 # ui
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.5.1'

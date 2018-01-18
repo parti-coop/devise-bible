@@ -37,6 +37,11 @@ gem 'devise-bootstrap-views'
 $ bundle install
 ```
 
+devise 를 설치합니다.
+```
+$ bin/rails generate devise:install
+```
+
 
 ## Application Controller 수정
 
@@ -47,7 +52,7 @@ application_controller.rb 3 ~ 16 라인을 복사하여, devise_controller 로 �
 
 devise 를 적용할 model 을 만듭니다.(여기서는 User 에 만듭니다)
 ```
-$ rails generate devise User
+$ bin/rails generate devise User
 ```
 
 생성된 migrate 파일(2018116042206_devise_create_users.rb)을 확인하며 추가해야 할 컬럼을 추가합니다.
@@ -68,7 +73,7 @@ views/layouts 하위에 devise.html.haml 을 생성합니다.
 
 커맨드에서 아래 명령어를 실행하여 한국어 파일을 생성합니다.
 ```
-$ rails g devise:views:locale ko
+$ bin/rails g devise:views:locale ko
 ```
 
 application.rb 에 locale config 를 추가합니다.
@@ -81,7 +86,7 @@ config.autoload_paths << Rails.root.join('lib')
 
 그런 후 bootstrap 이 적용되어 있는 devise view 생성을 위해 아래 명령어를 커맨드에서 실행합니다.
 ```
-$ rails g devise:views:bootstrap_haml_templates
+$ bin/rails g devise:views:bootstrap_haml_templates
 ```
 
 
