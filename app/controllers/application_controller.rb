@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
 
   def layout_for_resource
-    layout 'devise' if devise_controller?
+    return 'devise' if devise_controller?
   end
 
   def configure_permitted_parameters
